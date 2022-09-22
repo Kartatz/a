@@ -39,4 +39,4 @@ jobs:
         a: [10, 12, 14]
     steps:
     - name: a
-      run: echo ${{ matrix.version }}
+      run: echo ${{ matrix.version }} && ls /tmp
