@@ -21,7 +21,7 @@ jobs:
       id: setup-ndk
       with:
         ndk-version: r25-beta1
-    - runs: echo 'ANDROID_HOME=${{ steps.setup-ndk.outputs.ndk-path }}' >> "${GITHUB_ENV}"
+    - run: echo 'ANDROID_HOME=${{ steps.setup-ndk.outputs.ndk-path }}' >> "${GITHUB_ENV}"
     - name: Setup cross compiler for Windows
       run: |
         declare -r LLVM_MINGW_TAG="$(jq --raw-output '.tag_name' <<< "$(curl --silent --url 'https://api.github.com/repos/mstorsjo/llvm-mingw/releases/latest')")"
