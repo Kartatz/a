@@ -33,6 +33,7 @@ jobs:
         
         echo "LLVM_MINGW_HOME=$(dirname "${LLVM_MINGW_TARBALL}")/$(basename "${LLVM_MINGW_URL}" '.tar.xz')" >> "${GITHUB_ENV}"
   build:
+    runs-on: ubuntu-latest
     needs: [ setup-dependencies ]
     strategy:
       matrix:
